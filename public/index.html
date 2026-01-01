@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>LogicFlow Web</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .palette-btn {
+      width: 100%;
+      background: #374151;
+      border: none;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .palette-btn:hover {
+      background: #4b5563;
+    }
+  </style>
+</head>
+<body class="m-0 overflow-hidden bg-gray-900 flex">
+
+<!-- Palette -->
+<div id="palette" class="w-48 bg-gray-800 text-white p-3 space-y-2">
+  <h2 class="text-sm font-bold mb-2">Palette</h2>
+
+  <button class="palette-btn" data-type="AND">AND Gate</button>
+  <button class="palette-btn" data-type="OR">OR Gate</button>
+  <button class="palette-btn" data-type="NOT">NOT Gate</button>
+
+  <div class="mt-4 pt-2 border-t border-gray-700 space-y-2">
+    <button id="saveBtn" class="palette-btn">💾 Save</button>
+    <button id="loadBtn" class="palette-btn">📂 Load</button>
+
+    <input id="fileInput" type="file" accept=".json" hidden />
+  </div>
+</div>
+
+<!-- Canvas -->
+<canvas id="canvas" class="flex-1"></canvas>
+
+<script src="app.js"></script>
+<script src="canvas.js"></script>
+</body>
+</html>
